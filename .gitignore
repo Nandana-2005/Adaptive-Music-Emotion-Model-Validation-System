@@ -1,0 +1,31 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large files
+data/datasets/
+*.wav
+*.mp3
+
+# Logs
+*.log
