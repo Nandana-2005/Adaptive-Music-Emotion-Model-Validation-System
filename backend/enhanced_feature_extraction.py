@@ -4,10 +4,7 @@ from pathlib import Path
 from sklearn.preprocessing import StandardScaler
 
 def load_comprehensive_features():
-    """
-    Load ALL audio features from DEAM dataset
-    FIXED: CSV files use semicolon delimiter
-    """
+    
     
     print("Loading comprehensive audio features...")
     
@@ -47,16 +44,14 @@ def load_comprehensive_features():
         
         emotion = ann_row['emotion'].values[0]
         
-        # Load features WITH SEMICOLON DELIMITER
+       
         features_df = pd.read_csv(file, sep=';')
-        
-        # Compute statistics across time (rows)
         feature_stats = {
             'song_id': song_id,
             'emotion': emotion
         }
         
-        # For each feature column, compute: mean, std, min, max
+        
         for col in features_df.columns:
             if col == 'frameTime':
                 continue
@@ -72,7 +67,7 @@ def load_comprehensive_features():
         if (i + 1) % 200 == 0:
             print(f"  Processed {i + 1}/{len(feature_files)} songs...")
     
-    # Convert to DataFrame
+    
     df = pd.DataFrame(all_data)
     
     print(f"\n✓ Loaded {len(df)} songs")
@@ -87,7 +82,7 @@ def prepare_ml_data(df):
     
     print(f"\nPreparing ML data...")
     
-    # Separate features and labels
+    
     feature_cols = [col for col in df.columns if col not in ['song_id', 'emotion']]
     
     X = df[feature_cols]
@@ -95,11 +90,11 @@ def prepare_ml_data(df):
     
     print(f"Features shape: {X.shape}")
     
-    # Handle missing/inf values
+    
     X = X.replace([np.inf, -np.inf], np.nan)
     X = X.fillna(X.mean())
     
-    # Standardize
+   
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     
@@ -111,11 +106,11 @@ if __name__ == "__main__":
     df = load_comprehensive_features()
     X, y, scaler = prepare_ml_data(df)
     
-    # Save
+    
     np.save('data/X_features.npy', X)
     np.save('data/y_labels.npy', y)
     
-    print("\n✓ Saved preprocessed data")
+    print("\nSaved preprocessed data")
     print("  - data/X_features.npy")
     print("  - data/y_labels.npy")
-    print(f"\n🎉 Ready for ML training with {X.shape[1]} audio features!")
+    print(f"\n Ready for ML training with {X.shape[1]} audio features!")
