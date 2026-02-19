@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 
 def create_tables():
-    """Create all database tables"""
+    
     conn = sqlite3.connect('amecs.db')
     cursor = conn.cursor()
     
@@ -29,7 +29,7 @@ def create_tables():
         )
     ''')
     
-    # Table 3: Caregiver Feedback
+    
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS feedback (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,11 +43,10 @@ def create_tables():
     
     conn.commit()
     conn.close()
-    print("✓ Tables created successfully!")
+    print(" Tables created successfully!")
 
 
 def insert_user(name, age):
-    """Add a new child to database"""
     conn = sqlite3.connect('amecs.db')
     cursor = conn.cursor()
     cursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', (name, age))
@@ -57,7 +56,6 @@ def insert_user(name, age):
     return user_id
 
 def log_interaction(user_id, emotion, music_file, session_id):
-    """Log when child selects music"""
     conn = sqlite3.connect('amecs.db')
     cursor = conn.cursor()
     cursor.execute('''
@@ -70,7 +68,6 @@ def log_interaction(user_id, emotion, music_file, session_id):
     return interaction_id
 
 def get_user_history(user_id):
-    """Get all interactions for a child"""
     conn = sqlite3.connect('amecs.db')
     cursor = conn.cursor()
     cursor.execute('''
@@ -84,7 +81,6 @@ def get_user_history(user_id):
     return history
 
 def save_feedback(interaction_id, accurate, notes=""):
-    """Save caregiver feedback"""
     conn = sqlite3.connect('amecs.db')
     cursor = conn.cursor()
     cursor.execute('''
