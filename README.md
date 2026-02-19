@@ -1,4 +1,4 @@
-# AMECS - Adaptive Musical Emotion Communication System
+# Adaptive-Music-Emotion-Model-Validation-System
 
 **AI-powered personalized emotion recognition system for autistic children using music**
 
