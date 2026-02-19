@@ -10,7 +10,7 @@
 
 ##  Overview
 
-AMECS demonstrates that personalized machine learning models can adapt to individual emotion-music associations with limited data, addressing the challenge that autistic children perceive music and emotions uniquely.
+This demonstrates that personalized machine learning models can adapt to individual emotion-music associations with limited data, addressing the challenge that autistic children perceive music and emotions uniquely.
 
 **Key Innovation:** Individual learning instead of one-size-fits-all approaches
 
@@ -66,7 +66,7 @@ python backend/demo.py
 
 ## 📁 Project Structure
 ```
-AMECS-Project/
+AMEMVS-Project/
 ├── backend/
 │   ├── database.py                 # Data storage layer
 │   ├── app.py                      # Flask API server
@@ -101,7 +101,7 @@ AMECS-Project/
 - **Personalized Models:** Train separately per child with limited data (50/200/500 samples)
 
 ### 4. Evaluation
-- Compare accuracies on held-out test set
+- Compare accuracies on the held-out test set
 - Statistical validation (paired t-tests, effect sizes)
 - Visualize learning curves and individual differences
 
@@ -122,7 +122,7 @@ Shows accuracy improvement as data increases:
 ##  Technical Details
 
 **ML Algorithms:**
-- Random Forest Classifier (primary)
+- Random Forest Classifier 
 - Gradient Boosting
 - SVM
 - Neural Network (MLP)
