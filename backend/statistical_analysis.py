@@ -4,10 +4,7 @@ from scipy import stats
 import matplotlib.pyplot as plt
 
 def statistical_significance_tests(results_df):
-    """
-    Perform statistical tests to prove results are significant
-    Important for paper credibility
-    """
+
     
     print("="*70)
     print("STATISTICAL SIGNIFICANCE TESTING")
@@ -28,17 +25,17 @@ def statistical_significance_tests(results_df):
     print(f"  t-statistic: {t_stat_50:.3f}")
     print(f"  p-value: {p_value_50:.4f}")
     if p_value_50 < 0.05:
-        print(f"  ✓ Statistically significant (p < 0.05)")
+        print(f"   Statistically significant (p < 0.05)")
     else:
-        print(f"  ⚠ Not significant at p < 0.05 level")
+        print(f"   Not significant at p < 0.05 level")
     
     print(f"\nPersonalized (200) vs Population:")
     print(f"  t-statistic: {t_stat_200:.3f}")
     print(f"  p-value: {p_value_200:.4f}")
     if p_value_200 < 0.05:
-        print(f"  ✓ Statistically significant (p < 0.05)")
+        print(f"   Statistically significant (p < 0.05)")
     else:
-        print(f"  ⚠ Not significant at p < 0.05 level")
+        print(f"   Not significant at p < 0.05 level")
     
     # Effect size (Cohen's d)
     print("\n2. EFFECT SIZE (Cohen's d)")
