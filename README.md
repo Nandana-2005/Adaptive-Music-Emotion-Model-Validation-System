@@ -8,7 +8,7 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 AMECS demonstrates that personalized machine learning models can adapt to individual emotion-music associations with limited data, addressing the challenge that autistic children perceive music and emotions uniquely.
 
@@ -16,7 +16,7 @@ AMECS demonstrates that personalized machine learning models can adapt to indivi
 
 ---
 
-## 📊 Results
+##  Results
 
 | Metric | Value |
 |--------|-------|
@@ -31,28 +31,8 @@ AMECS demonstrates that personalized machine learning models can adapt to indivi
 
 ---
 
-## 🏗️ System Architecture
-```
-├── Data Layer
-│   ├── DEAM Dataset (1,802 songs with emotion labels)
-│   └── Audio Feature Extraction (1,040 features/song)
-│
-├── ML Layer
-│   ├── Population Model (generic baseline)
-│   └── Personalized Models (individual adaptation)
-│
-├── Backend API
-│   ├── Flask REST endpoints
-│   └── SQLite database
-│
-└── Evaluation
-    ├── Statistical validation (t-tests, effect sizes)
-    └── Visualization (learning curves, heatmaps)
-```
 
----
-
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 ```bash
@@ -62,24 +42,23 @@ pip
 
 ### Installation
 ```bash
-# Clone repository
+
 git clone https://github.com/YOUR_USERNAME/AMECS-Project.git
 cd AMECS-Project
 
-# Create virtual environment
+
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Install dependencies
+
 pip install -r requirements.txt
 ```
 
 ### Run Demo
 ```bash
-# Terminal 1: Start backend
+
 python backend/app.py
 
-# Terminal 2: Run demo
 python backend/demo.py
 ```
 
@@ -106,7 +85,7 @@ AMECS-Project/
 
 ---
 
-## 🔬 Research Methodology
+##  Research Methodology
 
 ### 1. Data Preparation
 - Load DEAM dataset (1,802 songs, 4 emotion categories)
@@ -140,7 +119,7 @@ Shows accuracy improvement as data increases:
 
 ---
 
-## 🔧 Technical Details
+##  Technical Details
 
 **ML Algorithms:**
 - Random Forest Classifier (primary)
@@ -165,7 +144,7 @@ Shows accuracy improvement as data increases:
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 **DEAM (Dataset for Emotion Analysis in Music)**
 - 1,802 songs with valence-arousal annotations
@@ -178,83 +157,30 @@ Shows accuracy improvement as data increases:
 
 ## 🧪 Running Experiments
 ```bash
-# Extract audio features (takes ~10 minutes)
+
 python backend/enhanced_feature_extraction.py
 
-# Train models and generate results (takes ~20 minutes)
 python backend/advanced_training.py
 
-# Run statistical analysis
 python backend/statistical_analysis.py
 
-# System health check
-python backend/system_check.py
 ```
 
 ---
 
-## 📝 Research Paper
 
-**Title:** "AMECS: An Adaptive Musical Emotion Communication System for Personalized Expression and Regulation in Autistic Children"
-
-**Novel Contributions:**
-1. Personalized emotion-music mapping algorithm
-2. Demonstrated adaptive learning with limited data (50-500 interactions)
-3. Statistical validation of personalization benefits
-4. Practical system architecture for autism interventions
-
-**Status:** Provisional patent filed
-
----
-
-## 🎓 Academic Context
-
-This project addresses:
-- Individual differences in emotion perception (common in autism)
-- Limited data scenarios (realistic for clinical deployment)
-- Personalization vs population-based approaches
-
-**Target Conferences:** CHI, ASSETS, UIST
-
----
-
-## 📄 License
+##  License
 
 Academic research project - Educational use only
 
 ---
 
-## 👥 Authors
-
-**[Your Name]** - Lead Developer & Researcher  
-**[Team Member Name]** - Collaborator
-
-**Institution:** [Your University]  
-**Year:** 2026
-
----
-
-## 📧 Contact
-
-- Email: [your.email@university.edu]
-- GitHub: [@your_username](https://github.com/your_username)
-
----
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - DEAM dataset creators
 - scikit-learn community
 - Anthropic Claude for development assistance
 
----
 
-## 📚 References
 
-1. DEAM Dataset: Aljanaki et al., "Developing a benchmark for emotional analysis of music"
-2. Music Emotion Recognition: Kim et al., "Music emotion recognition: A state of the art review"
-3. Autism & Music: [Relevant citations if any]
 
----
-
-## ⭐ Star this repo if you find it useful!
