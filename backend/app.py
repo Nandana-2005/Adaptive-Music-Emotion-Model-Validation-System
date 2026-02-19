@@ -4,9 +4,9 @@ from database import *
 import uuid
 
 app = Flask(__name__)
-CORS(app)  # Allows frontend to connect
+CORS(app)  
 
-# Initialize database
+
 create_tables()
 
 @app.route('/')
@@ -15,7 +15,6 @@ def home():
 
 @app.route('/api/log-selection', methods=['POST'])
 def log_selection():
-    """Save when child selects music"""
     data = request.json
     
     interaction_id = log_interaction(
@@ -35,7 +34,7 @@ def get_history(user_id):
     """Get all selections for a child"""
     history = get_user_history(user_id)
     
-    # Format for JSON
+    
     formatted = [
         {
             'emotion': row[0],
@@ -63,7 +62,6 @@ def create_user():
 
 @app.route('/api/save-feedback', methods=['POST'])
 def api_save_feedback():
-    """Save caregiver feedback"""
     data = request.json
     save_feedback(
         interaction_id=data['interaction_id'],
